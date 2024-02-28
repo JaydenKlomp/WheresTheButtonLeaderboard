@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+}
+  
+:root {
+    --bg1: #222;
+    --bg2: #3d2525;
+    --bg3: #1f3037;
+    --bg4: #1f341e;
+    --bg5: #363318;
+    --header: rgba(16,16,16,0.8);
+    --accent: rgba(16,16,16,0.6);
+}
+  
+body {
+    margin: 0;
+    background-color: var(--bg1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.AllLevelsPage{
+    background-image: url(../img/finalfinalbuttonpic.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+  
+::-webkit-scrollbar {
+    width: 15px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: rgb(35, 35, 35);
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(35, 35, 35);
+    border-radius: 100vw;
+    border: 4px solid rgb(66, 66, 66);
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(66, 66, 66);
+}
+  
+.gamePage {
+    background-image: linear-gradient(var(--bg3), var(--bg2), var(--bg2), var(--bg3));
+}
+  
+header {
+    background-color: var(--header);
+    width: 100%;
+    height: 115px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.7);
+    top: 0;
+    z-index: 11;
+    -webkit-backdrop-filter:
+        blur(10px);
+        backdrop-filter: blur(10px);
+}
+  
+header:last-child {
+    position: relative;
+    right: 0;
+}
+  
+nav {
+    width: 70%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    align-items: center;
+    gap: 0.5rem;
+    transition: 0.2s ease;
+}
+  
+nav a {
+    --a-pad: 60px;
+    font-size: 20px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    font-family: system-ui;
+    text-shadow: 0.2vh 0.2vh 0.5vh black;
+    border: 0.2vh solid transparent;
+    color: rgb(185, 185, 185);
+    text-decoration: none;
+    /* max-width: 300px; */
+    text-align: center;
+    padding: 30px var(--a-pad);
+    transition: 0.2s ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+  
+nav * {
+    flex: 1;
+}
+  
+nav a:hover {
+    text-shadow: -0.2vh -0.2vh 0.5vh black;
+    border: 0.2vh solid white;
+    color: white;
+    box-shadow: 0.2vh 0.2vh 0.5vh 0.5vh black, inset 0.2vh 0.2vh 1vh 0.2vh rgba(255, 255, 255, 0.177);
+    padding-inline: calc(var(--a-pad) + 20px);
+}
+  
+nav a:active {
+    color: gray;
+    text-shadow: unset;
+    border: 0.2vh solid transparent;
+    box-shadow: unset;
+}
+  
+nav img{
+    margin-inline: 15px;
+    max-width: 100px;
+    aspect-ratio: 1;
+    filter: invert(0.1);
+    transition:
+        scale 0.2s ease,
+        transform 1s cubic-bezier(0.65,-0.75, 0.08, 1.62);
+}
+
+nav img:hover{
+    scale: 1.1;
+    transform: rotate(360deg);
+}
+nav img:active{
+    scale: 1;
+}
+
+.mainContainer{
+    width: 95%;
+    margin-inline: auto;
+    display: flex;
+    gap: 50px;
+}
+
+.searchForm {
+    height: 50%;
+    display: flex;
+    gap: 10px;
+    flex: 1;
+    transition: 0.2s ease-in-out;
+    filter: drop-shadow(4px 4px 4px black);
+}
+  
+.searchForm input[type=text] {
+    width: 80%;
+    border-radius: 100vw;
+    flex: 80;
+    background-color: #191919;
+    border-bottom: rgb(28, 28, 28) solid 2px;
+    border-right: rgb(28, 28, 28) solid 2px;
+    border-top: rgba(28, 28, 28, 0.4) solid 1px;
+    border-left: rgba(28, 28, 28, 0.4) solid 1px;
+    padding-inline: 20px;
+    color: white;
+    font-size: 1.2rem;
+    transition: transform 0.2s ease-in-out;
+}
+  
+.searchForm button {
+    border-radius: 100vw;
+    flex: 10;
+    background-color: #181818;
+    color: white;
+    border-top: rgba(28, 28, 28, 0.4) solid 1px;
+    border-left: rgba(28, 28, 28, 0.4) solid 1px;
+    border-bottom: rgb(28, 28, 28) solid 2px;
+    border-right: rgb(28, 28, 28) solid 2px;
+    font-size: 1rem;
+    transition: transform 0.2s ease-in-out;
+}
+  
+.searchForm:hover {
+    filter: drop-shadow(4px 4px 4px black);
+}
+  
+.searchForm input[type=text]:hover {
+    transform: scale(1.02);
+    filter: invert(1);
+}
+  
+.searchForm button:hover {
+    transform: scale(1.05);
+    filter: invert(1);
+}
+
+.searchForm input[type=text]:active {
+    transform: scale(0.98);
+}
+  
+.searchForm button:active {
+    transform: scale(0.95);
+}
+  
+.searchBar {
+    width: 600px;
+    height: 100px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: fixed;
+    left: 82%;
+    top: -1%;
+    transform: translate(-50%, 0);
+    transition: 0.2s ease;
+    filter: opacity(0);
+}
+  
+.sideButtons {
+    --sb-color: rgb(48,48,48);
+    right: 1.5%;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 50%;
+    background-color: var(--sb-color);
+    border-radius: 100vw;
+    transition: 0.2s ease;
+    box-shadow: 0 0 0 15px var(--sb-color), 2px 2px 10px 16px black;
+    aspect-ratio: 1/1;
+    height: 50px;
+}
+  
+.sideButtons:hover {
+    background: rgb(56, 56, 56);
+    box-shadow: 0 0 0 15px rgb(56, 56, 56), 2px 2px 10px 16px black;
+    transform: scale(1.05);
+}
+  
+.sideButtons svg {              
+    height: 40px;
+    width: 40px;
+    transition: 0.2s ease;
+    padding: 10px;
+    filter: drop-shadow(1px 1px 5px black);
+}
+
+.magSvg:hover{
+    filter: drop-shadow(0px 0px 4px white);
+    transform: scale(1.1);
+}
+
+.magSvg:active {
+  transform: scale(0.9);
+}
+
+.AllLevelsPage nav a:hover,
+.levelOnePage nav a:hover,
+.LevelTwoPage nav a:hover,
+.LevelThreePage nav a:hover {
+  text-shadow: -0.2vh -0.2vh 0.5vh black;
+  border: 0.2vh solid white;
+  color: white;
+  box-shadow: 0.2vh 0.2vh 0.5vh 0.5vh black, inset 0.2vh 0.2vh 1vh 0.2vh rgba(255, 255, 255, 0.177);
+}
+
+.AllLevelsPage nav a:nth-child(1){
+    background-color: var(--accent);
+    box-shadow: inset 0.2vh 0.2vh 0.5vh 0.2vh black;
+    border: 0.2vh solid rgb(24, 24, 24);
+    color: white;
+    text-shadow: 0px 0px 20px rgba(220, 220, 220, 0.6);
+}
+  
+.LevelOnePage nav a:nth-child(2) {
+    background-color: var(--accent);
+    box-shadow: inset 0.2vh 0.2vh 0.5vh 0.2vh black;
+    border: 0.2vh solid rgb(24, 24, 24);
+    color: white;
+    text-shadow: 0px 0px 20px rgba(220, 220, 220, 0.6);
+}
+  
+.LevelTwoPage nav a:nth-child(3) {
+    background-color: var(--accent);
+    box-shadow: inset 0.2vh 0.2vh 0.5vh 0.2vh black;
+    border: 0.2vh solid rgb(24, 24, 24);
+    color: white;
+    text-shadow: 0px 0px 20px rgba(220, 220, 220, 0.6);
+}
+
+.LevelThreePage nav a:nth-child(4) {
+    background-color: var(--accent);
+    box-shadow: inset 0.2vh 0.2vh 0.5vh 0.2vh black;
+    border: 0.2vh solid rgb(24, 24, 24);
+    color: white;
+    text-shadow: 0px 0px 20px rgba(220, 220, 220, 0.6);
+}
+
+.pageTitle{
+    margin-top: 200px;
+    margin-bottom: 100px;
+    font-size: 4rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 10px black;
+}
+
+.LBContainer{
+    flex: 4;
+    margin-inline: auto;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 2rem;
+    width: 60%;
+    padding: 50px;
+    background-color: rgb(90, 90, 90);
+    box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.425);
+    margin-bottom: 100px;
+}
+
+.LBContainer table{
+    width: 100%;
+    text-align: left;
+    text-shadow: 2px 2px 10px black;
+}
+.LBContainer table th{
+    background-color: rgb(185, 185, 185);
+    color: black;
+    text-shadow: none;
+}
+.LBContainer table th,
+.LBContainer table td{
+    padding-inline: 5px;
+}
+
+.LBContainer table th:nth-child(2),
+.LBContainer table td:nth-child(2){
+    min-width: 200px;
+}
+
+.LBContainer table tr{
+    background-color: rgb(45, 45, 45);
+}
+
+.LBContainer table tr:nth-child(even){
+    background-color: rgb(69, 69, 69);
+}
+
+.categorySelector {
+    padding: 20px 0;
+    display: flex;
+    flex: 1;
+    background-color: rgba(36, 36, 36, 0.5);
+    justify-content: center;
+    height: -moz-fit-content;
+    height: fit-content;
+    box-shadow: 2px 2px 10px 1px black;
+}
+  
+.categorySelector form input[type=radio] {
+    justify-self: end;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 1.2rem;
+    width: 1.2rem;
+    outline: 3px solid white;
+    outline-offset: 3px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 10px 3px black;
+    margin-left: 30px;
+}
+  
+.categorySelector form input[type=radio]:checked {
+    background-color: white;
+}
+  
+  .categorySelector form label,
+  .categorySelector form input[type=submit],
+  .categorySelector form button,
+  .btnOrder,
+  .btnCreatePost,
+  .contactForm button {
+    justify-self: start;
+    font-size: 1.2rem;
+    width: 180px;
+    margin-right: 20px;
+    margin-left: 15px;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 100vw;
+    background-color: rgba(24, 24, 24, 0.6901960784);
+    color: white;
+    font-family: system-ui;
+    box-shadow: 2px 2px 10px 1px black;
+    border: 1px solid white;
+}
+  
+.categorySelector form {
+    font-size: 2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
